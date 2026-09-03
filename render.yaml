@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: atf-airdrop-bot
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NITRO_PRESET
+        value: render_com
+      - key: HOST
+        value: "0.0.0.0"
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        value: atf_airdrop
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: WEBAPP_URL
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
+      - key: TELEGRAM_WEBHOOK_SECRET
+        sync: false
+      - key: OWNER_TELEGRAM_ID
+        sync: false
+      - key: ADMIN_TELEGRAM_IDS
+        sync: false
+      - key: OWNER_TON_ADDRESS
+        value: UQCzzBp_io5zdMiOCMykYY7HzUFkhRqST-xMWvr_DzSScooi
+      - key: OWNER_DEFI_ADDRESS
+        sync: false
+      - key: TON_USD
+        value: "5.5"
+      - key: TONCENTER_API_KEY
+        sync: false
